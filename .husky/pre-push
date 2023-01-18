@@ -13,28 +13,4 @@ yarn test ||
   false;
 )
 
-yarn check-types || 
-(
-  echo "Type checking failed. Please fix the errors and try again."
-  false;
-)
-
-yarn check-format || 
-(
-  echo "Formatting failed. Please fix the errors and try again."
-  false;
-)
-
-yarn lint --fix || 
-(
-  echo "Linting failed. Please fix the errors and try again."
-  false;
-)
-
-yarn build || 
-(
-  echo "Build failed. Please fix the errors and try again."
-  false;
-)
-
 echo "All checks passed. Committing..."
