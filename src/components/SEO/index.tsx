@@ -4,12 +4,18 @@ import React from 'react';
 
 export interface SEOProps {
   title: string;
+  description: string;
 }
 
-function SEO({ title }: SEOProps) {
+function SEO({ title, description }: SEOProps) {
   return (
     <Head>
       <title>{title && `Pokedex - by Erickson`}</title>
+      <meta
+        name="description"
+        content={description || `Pokedex made to search all the pokemons info!`}
+      />
+      <link rel="icon" href="/favicon.ico" />
       <meta httpEquiv="x-ua-compatible" content="IE=edge,chrome=1" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta name="MobileOptimized" content="320" />
