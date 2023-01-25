@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "test": "jest",
+    "tw": "jest --watch",
     "test:ci": "jest --ci",
     "prepare": "husky install",
     "check-types": "tsc --pretty --noEmit",
