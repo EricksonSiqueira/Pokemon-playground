@@ -3,8 +3,8 @@ import Head from 'next/head';
 import React from 'react';
 
 export interface SEOProps {
-  title: string;
-  description: string;
+  title?: string;
+  description?: string;
 }
 
 function SEO({ title, description }: SEOProps) {
