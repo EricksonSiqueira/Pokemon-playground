@@ -7,14 +7,14 @@ export interface SEOProps {
   description?: string;
 }
 
-function SEO({ title, description }: SEOProps) {
+function SEO({
+  title = `Pokedex - by Erickson`,
+  description = `Pokedex made to search all the pokemons info!`,
+}: SEOProps) {
   return (
     <Head>
-      <title>{title && `Pokedex - by Erickson`}</title>
-      <meta
-        name="description"
-        content={description || `Pokedex made to search all the pokemons info!`}
-      />
+      <title>{title}</title>
+      <meta name="description" content={description} />
       <link rel="icon" href="/favicon.ico" />
       <meta httpEquiv="x-ua-compatible" content="IE=edge,chrome=1" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
