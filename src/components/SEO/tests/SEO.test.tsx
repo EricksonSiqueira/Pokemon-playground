@@ -38,4 +38,30 @@ describe(`SEO`, () => {
       expect(document.title).toBe(`Pokedex - by Erickson`);
     });
   });
+
+  it(`should render description received in props`, async () => {
+    render(<SEO {...SEOMock} />);
+
+    const description = document.querySelector(
+      `meta[name='description']`,
+    ) as HTMLTemplateElement;
+
+    await waitFor(() =>
+      expect(description?.content).toBe(`SEO mocked description`),
+    );
+  });
+
+  it(`should render description received in props`, async () => {
+    render(<SEO {...SEOWithoutDescriptionMock} />);
+
+    const description = document.querySelector(
+      `meta[name='description']`,
+    ) as HTMLTemplateElement;
+
+    await waitFor(() =>
+      expect(description?.content).toBe(
+        `Pokedex made to search all the pokemons info!`,
+      ),
+    );
+  });
 });
