@@ -75,11 +75,33 @@ describe(`SEO`, () => {
     await waitFor(() => expect(twitterTitle?.content).toBe(`SEO mocked title`));
   });
 
-  it(`should render twitter:title metatag with title prop text`, async () => {
+  it(`should render twitter:title metatag with default text when title is not passed`, async () => {
     render(<SEO {...SEOWithoutTitleMock} />);
 
     const twitterTitle = document.querySelector(
       `meta[name='twitter:title']`,
+    ) as HTMLTemplateElement;
+
+    await waitFor(() =>
+      expect(twitterTitle?.content).toBe(`Pokedex - by Erickson`),
+    );
+  });
+
+  it(`should render og:site_name metatag with title prop text`, async () => {
+    render(<SEO {...SEOMock} />);
+
+    const twitterTitle = document.querySelector(
+      `meta[property='og:site_name']`,
+    ) as HTMLTemplateElement;
+
+    await waitFor(() => expect(twitterTitle?.content).toBe(`SEO mocked title`));
+  });
+
+  it(`should render og:site_name metatag with default title text when title is not passed`, async () => {
+    render(<SEO {...SEOWithoutTitleMock} />);
+
+    const twitterTitle = document.querySelector(
+      `meta[property='og:site_name']`,
     ) as HTMLTemplateElement;
 
     await waitFor(() =>
