@@ -64,4 +64,26 @@ describe(`SEO`, () => {
       ),
     );
   });
+
+  it(`should render twitter:title metatag with title prop text`, async () => {
+    render(<SEO {...SEOMock} />);
+
+    const twitterTitle = document.querySelector(
+      `meta[name='twitter:title']`,
+    ) as HTMLTemplateElement;
+
+    await waitFor(() => expect(twitterTitle?.content).toBe(`SEO mocked title`));
+  });
+
+  it(`should render twitter:title metatag with title prop text`, async () => {
+    render(<SEO {...SEOWithoutTitleMock} />);
+
+    const twitterTitle = document.querySelector(
+      `meta[name='twitter:title']`,
+    ) as HTMLTemplateElement;
+
+    await waitFor(() =>
+      expect(twitterTitle?.content).toBe(`Pokedex - by Erickson`),
+    );
+  });
 });
