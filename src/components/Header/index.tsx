@@ -7,7 +7,6 @@ function Header() {
   return (
     <>
       <div className="h-24" />
-
       <header className="fixed w-screen bg-white h-24 border-b shadow-sm top-0 flex items-center justify-center">
         <nav className="max-w-screen-xl w-full">
           <Link
