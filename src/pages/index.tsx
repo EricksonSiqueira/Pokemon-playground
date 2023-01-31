@@ -13,10 +13,13 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Layout />
-      <main>
-        <h1 className="text-red-900 text-9xl">Welcome to the best Pokedex!</h1>
-      </main>
+      <Layout>
+        <main>
+          <h1 className="text-red-900 text-9xl">
+            Welcome to the best Pokedex!
+          </h1>
+        </main>
+      </Layout>
     </>
   );
 }
