@@ -2,10 +2,15 @@ import React from 'react';
 import Footer from '../Footer';
 import Header from '../Header';
 
-function Layout() {
+export interface LayoutProps {
+  children?: React.ReactNode;
+}
+
+function Layout({ children }: LayoutProps) {
   return (
     <>
       <Header />
+      {children}
       <Footer />
     </>
   );
